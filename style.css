@@ -1,0 +1,146 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.video-banner {
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;   
+}
+
+.video-banner video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center center;
+}
+
+.header-text{
+    height: 10vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+
+.header-text h1, 
+.header-text h2 {
+    margin: 5px 0;
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+
+.portfolio-grid {
+    max-width: 1600px;
+    /* border: 2px solid rgb(255, 255, 255); */
+    column-count: 3;
+    column-gap: 20px; 
+    margin: 50px auto 100px auto; 
+}
+
+.portfolio-item {
+    break-inside: avoid; 
+    margin-bottom: 20px; /* Spacing between images vertically */
+    background-color: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+
+}
+
+.portfolio-item img {
+    width: 100%;       /* Forces image to scale to the column width */
+    height: auto;      /* Automatically calculates height, showing the FULL image */
+    display: block;    /* Removes default bottom whitespace under images */
+    transition: transform 0.5s ease-out;
+}
+
+.portfolio-item video {
+    width: 100%;       /* Forces image to scale to the column width */
+    height: auto;      /* Automatically calculates height, showing the FULL image */
+    display: block;    /* Removes default bottom whitespace under images */
+    transition: transform 0.5s ease-out;
+}
+
+/* Optional: Slight zoom effect when hovering over an image */
+.portfolio-item img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth hover effect transition */
+}
+
+.portfolio-item video:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth hover effect transition */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .portfolio-grid { column-count: 2; }
+}
+@media (max-width: 480px) {
+    .portfolio-grid { column-count: 1; }
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+
+/* THE LIGHTBOX CONTAINER */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 999; /* Sits on top of absolutely everything else */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark backdrop */
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out; /* Changes cursor to signal clicking closes it */
+}
+
+
+
+/* THE ENLARGED IMAGE */
+.lightbox img,
+.lightbox video {
+    max-width: 90%;
+    max-height: 95vh;
+    object-fit: contain;
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    
+    /* Smooth fade-in animation */
+    animation: fadeIn 0.25s ease-in-out;
+    cursor: zoom-in; /* Shows a magnifying glass with a '+' */
+    transition: transform 0.1s ease; /* Makes the zoom transition smooth instead of instant */
+}
+
+/* THE NEW CLASS: What happens when the image is clicked */
+.lightbox img.zoomed,
+.lightbox video.zoomed {
+
+    cursor: zoom-out; /* Changes magnifying glass to a '-' */
+}
+
+
+/* CLOSE BUTTON (The 'X') */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
