@@ -177,9 +177,9 @@ body{
 @media (max-width: 768px) {
     .portfolio-grid { column-count: 2; }
 }
-@media (max-width: 480px) {
+/*@media (max-width: 480px) {
     .portfolio-grid { column-count: 1; }
-}
+}*/
 
 /*-----------------------------------------------------------------------------------------------*/
 
