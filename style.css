@@ -32,7 +32,7 @@ body{
     font-family: "Geist Mono";
     border: 4px double white;
     box-shadow: inset 0 0 15px white;
-    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.594));
+   /* filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.594));*/
     /* filter: drop-shadow(-1px -1px 1px rgb(255, 94, 0)) 
         drop-shadow(0px 6px 1px rgb(0, 132, 255)) 
         drop-shadow(0px 12px 2px rgb(0, 229, 255)) 
